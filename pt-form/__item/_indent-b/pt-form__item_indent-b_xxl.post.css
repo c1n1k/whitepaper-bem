@@ -1,7 +1,3 @@
-.pt-form__item_indent-b_xxl {
+.pt-form__item_indent-b_xxl:not(:last-child) {
 	margin-bottom: var(--space-xxl);
-
-	&:last-child {
-		margin-bottom: 0;
-	}
 }

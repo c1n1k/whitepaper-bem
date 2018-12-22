@@ -1,7 +1,3 @@
-.pt-form__item_space-b_xxl {
+.pt-form__item_space-b_xxl:not(:last-child) {
 	padding-bottom: var(--space-xxl);
-
-	&:last-child {
-		padding-bottom: 0;
-	}
 }

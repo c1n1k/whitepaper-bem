@@ -1,0 +1,3 @@
+.pt-list__item_space-b_xxxl:not(:last-child) {
+	padding-bottom: var(--space-xxxl);
+}
