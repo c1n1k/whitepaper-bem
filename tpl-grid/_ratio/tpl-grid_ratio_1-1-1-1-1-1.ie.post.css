@@ -1,0 +1,5 @@
+.tpl-grid_ratio_1-1-1-1-1-1 {
+	& > * {
+		lost-column: 1/6;
+	}
+}
