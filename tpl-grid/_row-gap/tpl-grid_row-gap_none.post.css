@@ -1,3 +1,5 @@
 .tpl-grid_row-gap_none {
-	grid-row-gap: none;
+	& > * {
+		margin-bottom: 0;
+	}
 }

@@ -1,3 +1,5 @@
 .tpl-grid_col-gap_full {
-	grid-column-gap: var(--col-gap-full);
+	& > * {
+		lost-column-gutter: var(--col-gap-full);
+	}
 }

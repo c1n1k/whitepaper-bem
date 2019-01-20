@@ -1,3 +1,5 @@
 .tpl-grid_row-gap_half {
-	grid-row-gap: var(--col-gap-half);
+	& > * {
+		margin-bottom: var(--col-gap-full);
+	}
 }

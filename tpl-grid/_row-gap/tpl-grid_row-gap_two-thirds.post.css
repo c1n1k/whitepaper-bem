@@ -1,3 +1,5 @@
 .tpl-grid_row-gap_two-thirds {
-	grid-row-gap: var(--col-gap-two-thirds);
+	& > * {
+		margin-bottom: var(--col-gap-two-thirds);
+	}
 }
