@@ -1,5 +1,10 @@
 .tpl-grid_row-gap_third {
-	& > * {
-		margin-bottom: var(--row-gap-third);
+	@supports not (display:grid) {
+		& > * {
+			margin-bottom: var(--col-gap-third);
+		}
+	}
+	@supports (display:grid) {
+		grid-row-gap: var(--col-gap-third);
 	}
 }

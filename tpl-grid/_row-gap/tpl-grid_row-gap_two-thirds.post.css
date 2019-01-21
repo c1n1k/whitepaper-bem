@@ -1,5 +1,11 @@
 .tpl-grid_row-gap_two-thirds {
-	& > * {
-		margin-bottom: var(--col-gap-two-thirds);
+	@supports not (display:grid) {
+		& > * {
+			margin-bottom: var(--col-gap-two-thirds);
+		}
+	}
+	
+	@supports (display:grid) {
+		grid-row-gap: var(--col-gap-two-thirds);
 	}
 }

@@ -1,5 +1,11 @@
 .tpl-grid_col-gap_third {
-	& > * {
-		lost-column-gutter: var(--col-gap-third);
+	@supports not (display:grid) {
+		& > * {
+			lost-column-gutter: var(--col-gap-third);
+		}
+	}
+
+	@supports (display:grid) {
+		grid-column-gap: var(--col-gap-third);
 	}
 }

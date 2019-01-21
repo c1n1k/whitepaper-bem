@@ -1,4 +1,24 @@
-.tpl-layout_structure_fold-50-50 {
-	grid-template-columns: var(--menu-fold) calc((100% - var(--menu-fold)) * 0.5) calc((100% - var(--menu-fold)) * 0.5);
-	grid-template-rows: minmax(100vh, auto);
+@supports not (display:grid) {
+	.tpl-layout_structure_fold-50-50 {
+		& > *:nth-child(1) {
+			width: var(--menu-fold);
+			flex-basis: var(--menu-fold);
+		}
+		& > *:nth-child(2) {
+			width: calc((100% - var(--menu-fold)) * 0.5);
+			flex-basis: calc((100% - var(--menu-fold)) * 0.5);
+		}
+		
+		& > *:nth-child(3) {
+			width: calc((100% - var(--menu-fold)) * 0.5);
+			flex-basis: calc((100% - var(--menu-fold)) * 0.5);
+		}
+	}
+}
+
+@supports not (display:grid) {
+	.tpl-layout_structure_fold-50-50 {
+		grid-template-columns: var(--menu-fold) calc((100% - var(--menu-fold)) * 0.5) calc((100% - var(--menu-fold)) * 0.5);
+		grid-template-rows: minmax(100vh, auto);
+	}
 }

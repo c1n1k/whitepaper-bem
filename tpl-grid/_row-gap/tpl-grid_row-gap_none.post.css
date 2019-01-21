@@ -1,5 +1,10 @@
 .tpl-grid_row-gap_none {
-	& > * {
-		margin-bottom: 0;
+	@supports not (display:grid) {
+		& > * {
+			margin-bottom: 0;
+		}
+	}
+	@supports (display:grid) {
+		grid-row-gap: var(--col-gap-none);
 	}
 }

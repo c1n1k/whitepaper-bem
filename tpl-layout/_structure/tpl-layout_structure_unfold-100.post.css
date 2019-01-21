@@ -1,4 +1,19 @@
-.tpl-layout_structure_unfold-100 {
-	grid-template-columns: var(--menu-unfold) auto;
-	grid-template-rows: minmax(100vh, auto);
+@supports not (display:grid) {
+	.tpl-layout_structure_unfold-100 {
+		& > *:nth-child(1) {
+			width: var(--menu-unfold);
+			flex-basis: var(--menu-unfold);
+		}
+		& > *:nth-child(2) {
+			width: calc((100% - var(--menu-unfold)));
+			flex-basis: calc((100% - var(--menu-unfold)));
+		}
+	}
+}
+
+@supports not (display:grid) {
+	.tpl-layout_structure_unfold-100 {
+		grid-template-columns: var(--menu-unfold) auto;
+		grid-template-rows: minmax(100vh, auto);
+	}
 }

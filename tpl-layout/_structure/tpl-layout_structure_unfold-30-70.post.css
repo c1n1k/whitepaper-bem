@@ -1,4 +1,24 @@
-.tpl-layout_structure_unfold-30-70 {
-	grid-template-columns: var(--menu-unfold) calc((100% - var(--menu-unfold)) * 0.3) calc((100% - var(--menu-unfold)) * 0.7);
-	grid-template-rows: minmax(100vh, auto);
+@supports not (display:grid) {
+	.tpl-layout_structure_unfold-30-70 {
+		& > *:nth-child(1) {
+			width: var(--menu-unfold);
+			flex-basis: var(--menu-unfold);
+		}
+		& > *:nth-child(2) {
+			width: calc((100% - var(--menu-unfold)) * 0.3);
+			flex-basis: calc((100% - var(--menu-unfold)) * 0.3);
+		}
+		
+		& > *:nth-child(3) {
+			width: calc((100% - var(--menu-unfold)) * 0.7);
+			flex-basis: calc((100% - var(--menu-unfold)) * 0.7);
+		}
+	}
+}
+
+@supports (display:grid) {
+	.tpl-layout_structure_unfold-30-70 {
+		grid-template-columns: var(--menu-unfold) calc((100% - var(--menu-unfold)) * 0.3) calc((100% - var(--menu-unfold)) * 0.7);
+		grid-template-rows: minmax(100vh, auto);
+	}
 }

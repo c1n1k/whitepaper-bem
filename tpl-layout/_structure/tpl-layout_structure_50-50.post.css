@@ -1,4 +1,19 @@
-.tpl-layout_structure_50-50 {
-	grid-template-columns: 50% 50%;
-	grid-template-rows: minmax(100vh, auto);
+@supports (display:grid) {
+	.tpl-layout_structure_50-50 {
+		& > *:nth-child(1) {
+			width: 50%;
+			flex-basis: 50%;
+		}
+		& > *:nth-child(2) {
+			width: 50%;
+			flex-basis: 50%;
+		}
+	}
+}
+
+@supports (display:grid) {
+	.tpl-layout_structure_50-50 {
+		grid-template-columns: 50% 50%;
+		grid-template-rows: minmax(100vh, auto);
+	}
 }

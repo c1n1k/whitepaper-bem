@@ -1,4 +1,19 @@
-.tpl-layout_structure_10-90 {
-	grid-template-columns: 10% 90%;
-	grid-template-rows: minmax(100vh, auto);
+@supports not (display:grid) {
+	.tpl-layout_structure_10-90 {
+		& > *:nth-child(1) {
+			width: 10%;
+			flex-basis: 10%;
+		}
+		& > *:nth-child(2) {
+			width: 90%;
+			flex-basis: 90%;
+		}
+	}
+}
+
+@supports (display:grid) {
+	.tpl-layout_structure_10-90 {
+		grid-template-columns: 10% 90%;
+		grid-template-rows: minmax(100vh, auto);
+	}
 }

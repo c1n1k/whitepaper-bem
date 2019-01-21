@@ -1,5 +1,10 @@
 .tpl-grid_col-gap_none {
-	& > * {
-		lost-column-gutter: 0;
+	@supports not (display:grid) {
+		& > * {
+			lost-column-gutter: 0;
+		}
+	}
+	@supports (display:grid) {
+		grid-column-gap: var(--space-none);
 	}
 }

@@ -1,235 +1,250 @@
-.tpl-grid {
-	display: flex;
-	width: 100%;
-	flex-wrap: wrap;
+@supports not (display:grid) {
+	.tpl-grid {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
 
-	&_xs-ratio {
-		&_1-1-1 {
-			@media screen and (max-width: $screen-xs-max) {
-				flex-flow: row wrap;
-				
-				& > * {
-					lost-column: 1/3;
+		&_xs-ratio {
+			&_1-1-1 {
+				@media screen and (max-width: $screen-xs-max) {
+					flex-flow: row wrap;
+					
+					& > * {
+						lost-column: 1/3;
+					}
+
+					.tpl-grid__fraction {
+						padding: var(--col-gap-half);
+						box-sizing: border-box;
+					}
 				}
+			}
 
-				.tpl-grid__fraction {
-					padding: var(--col-gap-half);
-					box-sizing: border-box;
+			&_1-1 {
+				@media screen and (max-width: $screen-xs-max) {
+					flex-flow: row wrap;
+					
+					& > * {
+						lost-column: 1/2;
+					}
+
+					.tpl-grid__fraction {
+						padding: var(--col-gap-half);
+						box-sizing: border-box;
+					}
 				}
 			}
 		}
 
-		&_1-1 {
-			@media screen and (max-width: $screen-xs-max) {
-				flex-flow: row wrap;
-				
-				& > * {
-					lost-column: 1/2;
+		&_s-ratio {
+			&_1-1-1-1-1 {
+				@media screen and (min-width: $screen-s) {
+					& > * {
+						lost-column: 1/5;
+					}
 				}
+			}
+			&_1-1-1-1 {
+				@media screen and (min-width: $screen-s) {
+					& > * {
+						lost-column: 1/4;
+					}
+				}
+			}
+			&_1-1-1 {
+				@media screen and (min-width: $screen-s) {
+					& > * {
+						lost-column: 1/3;
+					}
+				}
+			}
+			&_1-1 {
+				@media screen and (min-width: $screen-s) {
+					& > * {
+						lost-column: 1/2;
+					}
+				}
+			}
+		}
 
-				.tpl-grid__fraction {
-					padding: var(--col-gap-half);
-					box-sizing: border-box;
+		&_m-ratio {
+			&_1-1-1-1-1 {
+				@media screen and (min-width: $screen-m) {
+					& > * {
+						lost-column: 1/5;
+					}
+				}
+			}
+			&_1-1-1-1 {
+				@media screen and (min-width: $screen-m) {
+					& > * {
+						lost-column: 1/4;
+					}
+				}
+			}
+			&_1-1-1 {
+				@media screen and (min-width: $screen-m) {
+					& > * {
+						lost-column: 1/3;
+					}
+				}
+			}
+			&_1-1 {
+				@media screen and (min-width: $screen-m) {
+					& > * {
+						lost-column: 1/2;
+					}
+				}
+			}
+		}
+
+		&_l-ratio {
+			&_1-1-1-1-1 {
+				@media screen and (min-width: $screen-l) {
+					& > * {
+						lost-column: 1/5;
+					}
+				}
+			}
+			&_1-1-1-1 {
+				@media screen and (min-width: $screen-l) {
+					& > * {
+						lost-column: 1/4;
+					}
+				}
+			}
+			&_1-1-1 {
+				@media screen and (min-width: $screen-l) {
+					& > * {
+						lost-column: 1/3;
+					}
+				}
+			}
+			&_1-1 {
+				@media screen and (min-width: $screen-l) {
+					& > * {
+						lost-column: 1/2;
+					}
+				}
+			}
+		}
+
+		&_xl-ratio {
+			&_1-1-1-1-1 {
+				@media screen and (min-width: $screen-xl) {
+					& > * {
+						lost-column: 1/5;
+					}
+				}
+			}
+			&_1-1-1-1 {
+				@media screen and (min-width: $screen-xl) {
+					& > * {
+						lost-column: 1/4;
+					}
+				}
+			}
+			&_1-1-1 {
+				@media screen and (min-width: $screen-xl) {
+					& > * {
+						lost-column: 1/3;
+					}
+				}
+			}
+			&_1-1 {
+				@media screen and (min-width: $screen-xl) {
+					& > * {
+						lost-column: 1/2;
+					}
 				}
 			}
 		}
 	}
+}
 
-	&_s-ratio {
-		&_1-1-1-1-1 {
-			@media screen and (min-width: $screen-s) {
-				& > * {
-					lost-column: 1/5;
-				}
+@supports (display:grid) {
+	.tpl-grid {
+		display: grid;
+		width: 100%;
+	}
+
+	.tpl-grid_xs-columns {
+		&_2 { grid-template-columns: repeat(2, 1fr); }
+		&_3 { grid-template-columns: repeat(3, 1fr); }
+	}
+
+	@media screen and (max-width: $screen-xs-max) {
+		.tpl-grid_xs-ratio_1-1-1 {
+			flex-flow: row wrap;
+			grid-template-columns: 1fr 1fr 1fr;
+
+			.tpl-grid__fraction {
+				padding: var(--col-gap-half);
+				box-sizing: border-box;
 			}
 		}
-		&_1-1-1-1 {
-			@media screen and (min-width: $screen-s) {
-				& > * {
-					lost-column: 1/4;
-				}
-			}
-		}
-		&_1-1-1 {
-			@media screen and (min-width: $screen-s) {
-				& > * {
-					lost-column: 1/3;
-				}
-			}
-		}
-		&_1-1 {
-			@media screen and (min-width: $screen-s) {
-				& > * {
-					lost-column: 1/2;
-				}
+	}
+	@media screen and (max-width: $screen-xs-max) {
+		.tpl-grid_xs-ratio_1-1 {
+			grid-template-columns: 1fr 1fr;
+
+			.tpl-grid__fraction {
+				padding: var(--col-gap-half);
+				box-sizing: border-box;
 			}
 		}
 	}
 
-	&_m-ratio {
-		&_1-1-1-1-1 {
-			@media screen and (min-width: $screen-m) {
-				& > * {
-					lost-column: 1/5;
-				}
-			}
+	@media screen and (min-width: $screen-s) {
+		.tpl-grid_s-ratio {
+			&_1-1-1-1-1 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+			&_1-1-1-1 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+			&_1-1-1 { grid-template-columns: 1fr 1fr 1fr; }
+			&_1-1 { grid-template-columns: 1fr 1fr; }
 		}
-		&_1-1-1-1 {
-			@media screen and (min-width: $screen-m) {
-				& > * {
-					lost-column: 1/4;
-				}
-			}
-		}
-		&_1-1-1 {
-			@media screen and (min-width: $screen-m) {
-				& > * {
-					lost-column: 1/3;
-				}
-			}
-		}
-		&_1-1 {
-			@media screen and (min-width: $screen-m) {
-				& > * {
-					lost-column: 1/2;
-				}
-			}
+		.tpl-grid_s-columns {
+			&_5 { grid-template-columns: repeat(5, 1fr); }
+			&_6 { grid-template-columns: repeat(6, 1fr); }
+			&_8 { grid-template-columns: repeat(8, 1fr); }
 		}
 	}
-
-	&_l-ratio {
-		&_1-1-1-1-1 {
-			@media screen and (min-width: $screen-l) {
-				& > * {
-					lost-column: 1/5;
-				}
-			}
+	@media screen and (min-width: $screen-m) {
+		.tpl-grid_m-ratio {
+			&_1-1-1-1-1 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+			&_1-1-1-1 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+			&_1-1-1 { grid-template-columns: 1fr 1fr 1fr; }
+			&_1-1 { grid-template-columns: 1fr 1fr; }
 		}
-		&_1-1-1-1 {
-			@media screen and (min-width: $screen-l) {
-				& > * {
-					lost-column: 1/4;
-				}
-			}
-		}
-		&_1-1-1 {
-			@media screen and (min-width: $screen-l) {
-				& > * {
-					lost-column: 1/3;
-				}
-			}
-		}
-		&_1-1 {
-			@media screen and (min-width: $screen-l) {
-				& > * {
-					lost-column: 1/2;
-				}
-			}
+		.tpl-grid_m-columns {
+			&_12 { grid-template-columns: repeat(12, 1fr); }
+			&_10 { grid-template-columns: repeat(10, 1fr); }
+			&_6 { grid-template-columns: repeat(6, 1fr); }
 		}
 	}
-
-	&_xl-ratio {
-		&_1-1-1-1-1 {
-			@media screen and (min-width: $screen-xl) {
-				& > * {
-					lost-column: 1/5;
-				}
-			}
+	@media screen and (min-width: $screen-l) {
+		.tpl-grid_l-ratio {
+			&_1-1-1-1-1 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+			&_1-1-1-1 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+			&_1-1-1 { grid-template-columns: 1fr 1fr 1fr; }
+			&_1-1 { grid-template-columns: 1fr 1fr; }
 		}
-		&_1-1-1-1 {
-			@media screen and (min-width: $screen-xl) {
-				& > * {
-					lost-column: 1/4;
-				}
-			}
-		}
-		&_1-1-1 {
-			@media screen and (min-width: $screen-xl) {
-				& > * {
-					lost-column: 1/3;
-				}
-			}
-		}
-		&_1-1 {
-			@media screen and (min-width: $screen-xl) {
-				& > * {
-					lost-column: 1/2;
-				}
-			}
+		.tpl-grid_l-columns {
+			&_12 { grid-template-columns: repeat(12, 1fr); }
+			&_10 { grid-template-columns: repeat(10, 1fr); }
+			&_6 { grid-template-columns: repeat(6, 1fr); }
 		}
 	}
-
-	&_xs-columns {
-		&_2 {
-			@media screen and (max-width: $screen-xs-max) {
-
-			}
+	@media screen and (min-width: $screen-xl) {
+		.tpl-grid_xl-ratio {
+			&_1-1-1-1-1 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+			&_1-1-1-1 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+			&_1-1-1 { grid-template-columns: 1fr 1fr 1fr; }
+			&_1-1 { grid-template-columns: 1fr 1fr; }
 		}
-
-		&_3 {
-			@media screen and (max-width: $screen-xs-max) {
-
-			}
-		}
-	}
-
-	&_s-columns {
-		&_5 {
-			@media screen and (min-width: $screen-s) {
-			}
-		}
-		&_6 {
-			@media screen and (min-width: $screen-s) {
-			}
-		}
-		&_8 {
-			@media screen and (min-width: $screen-s) {
-			}
-		}
-	}
-
-	&_m-columns {
-		&_12 {
-			@media screen and (min-width: $screen-m) {
-			}
-		}
-		&_10 {
-			@media screen and (min-width: $screen-m) {
-			}
-		}
-		&_6 {
-			@media screen and (min-width: $screen-m) {
-			}
-		}
-	}
-
-	&_l-columns {
-		&_12 {
-			@media screen and (min-width: $screen-l) {
-			}
-		}
-		&_10 {
-			@media screen and (min-width: $screen-l) {
-			}
-		}
-		&_6 {
-			@media screen and (min-width: $screen-l) {
-			}
-		}
-	}
-
-	&_xl-columns {
-		&_12 {
-			@media screen and (min-width: $screen-xl) {
-			}
-		}
-		&_10 {
-			@media screen and (min-width: $screen-xl) {
-			}
-		}
-		&_6 {
-			@media screen and (min-width: $screen-xl) {
-			}
+		.tpl-grid_xl-columns {
+			&_12 { grid-template-columns: repeat(12, 1fr); }
+			&_10 { grid-template-columns: repeat(10, 1fr); }
+			&_6 { grid-template-columns: repeat(6, 1fr); }
 		}
 	}
 }

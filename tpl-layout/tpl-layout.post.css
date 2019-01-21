@@ -1,5 +1,13 @@
-.tpl-layout {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
+@supports not (display:grid) {
+	.tpl-layout {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+}
+
+@supports (display:grid) {
+	.tpl-layout {
+		display: grid;
+	}
 }

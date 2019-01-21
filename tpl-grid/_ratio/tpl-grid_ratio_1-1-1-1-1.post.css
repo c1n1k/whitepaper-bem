@@ -1,5 +1,10 @@
 .tpl-grid_ratio_1-1-1-1-1 {
-	& > * {
-		lost-column: 1/5;
+	@supports not (display:grid) {
+		& > * {
+			lost-column: 1/5;
+		}
+	}
+	@supports (display:grid) {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
 }
