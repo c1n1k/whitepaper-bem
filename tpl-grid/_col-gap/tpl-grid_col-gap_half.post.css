@@ -1,5 +1,5 @@
 .tpl-grid_col-gap_half {
 	& > * {
-		lost-column-gutter: var(--col-gap-half);
+		/* lost-column-gutter: var(--col-gap-half); */
 	}
 }

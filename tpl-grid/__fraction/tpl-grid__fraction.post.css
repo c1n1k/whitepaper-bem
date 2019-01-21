@@ -1,16 +1,6 @@
 .tpl-grid__fraction {
 	min-width: 0;
 
-	&_xs-col {
-		&_1 { 
-			lost-column: 1;
-		}
-		
-		&_2 { grid-column: span 2; }
-
-		&_3 { grid-column: span 3; }
-	}
-
 	@media screen and (max-width: $screen-xs-max) {
 		&_xs-order {
 			&_-1 { order: -1; }
@@ -44,21 +34,6 @@
 	}
 
 	@media screen and (min-width: $screen-s) {
-		&_s-col {
-			&_1 {  }
-			&_2 {  }
-			&_3 {  }
-			&_4 {  }
-			&_5 {  }
-			&_6 {  }
-			&_7 {  }
-			&_8 {  }
-			&_9 {  }
-			&_10 {  }
-			&_11 {  }
-			&_12 {  }
-		}
-
 		&_s-row {
 			&_1 {  }
 			&_2 {  }
@@ -67,21 +42,6 @@
 	}
 
 	@media screen and (min-width: $screen-m) {
-		&_m-col {
-			&_1 {  }
-			&_2 {  }
-			&_3 {  }
-			&_4 {  }
-			&_5 {  }
-			&_6 {  }
-			&_7 {  }
-			&_8 {  }
-			&_9 {  }
-			&_10 {  }
-			&_11 {  }
-			&_12 {  }
-		}
-
 		&_m-row {
 			&_1 {  }
 			&_2 {  }
@@ -96,21 +56,6 @@
 	}
 
 	@media screen and (min-width: $screen-l) {
-		&_l-col {
-			&_1 {  }
-			&_2 {  }
-			&_3 {  }
-			&_4 {  }
-			&_5 {  }
-			&_6 {  }
-			&_7 {  }
-			&_8 {  }
-			&_9 {  }
-			&_10 {  }
-			&_11 {  }
-			&_12 {  }
-		}
-
 		&_l-row {
 			&_1 {  }
 			&_2 {  }
@@ -125,21 +70,6 @@
 	}
 
 	@media screen and (min-width: $screen-xl) {
-		&_xl-col {
-			&_1 {  }
-			&_2 {  }
-			&_3 {  }
-			&_4 {  }
-			&_5 {  }
-			&_6 {  }
-			&_7 {  }
-			&_8 {  }
-			&_9 {  }
-			&_10 {  }
-			&_11 {  }
-			&_12 {  }
-		}
-
 		&_xl-row {
 			&_1 {  }
 			&_2 {  }
