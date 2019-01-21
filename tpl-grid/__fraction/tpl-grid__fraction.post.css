@@ -7,12 +7,6 @@
 			&_0 { order: 0; }
 			&_1 { order: 1; }
 		}
-
-		&_xs-row {
-			&_1 {  }
-			&_2 {  }
-			&_3 {  }
-		}
 	}
 
 	@media screen and (max-width: $screen-s) {
@@ -33,14 +27,6 @@
 		}
 	}
 
-	@media screen and (min-width: $screen-s) {
-		&_s-row {
-			&_1 {  }
-			&_2 {  }
-			&_3 {  }
-		}
-	}
-
 	@media screen and (min-width: $screen-m) {
 		&_m-row {
 			&_1 {  }
@@ -56,12 +42,6 @@
 	}
 
 	@media screen and (min-width: $screen-l) {
-		&_l-row {
-			&_1 {  }
-			&_2 {  }
-			&_3 {  }
-		}
-
 		&_l-order {
 			&_-1 { order: -1; }
 			&_0 { order: 0; }
@@ -70,12 +50,6 @@
 	}
 
 	@media screen and (min-width: $screen-xl) {
-		&_xl-row {
-			&_1 {  }
-			&_2 {  }
-			&_3 {  }
-		}
-
 		&_xl-order {
 			&_-1 { order: -1; }
 			&_0 { order: 0; }

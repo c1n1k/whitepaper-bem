@@ -1,5 +1,5 @@
 .tpl-grid_col-gap_two-thirds {
 	& > * {
-		/* lost-column-gutter: var(--col-gap-two-thirds); */
+		lost-column-gutter: var(--col-gap-two-thirds);
 	}
 }
